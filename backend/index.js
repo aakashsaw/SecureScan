@@ -63,6 +63,6 @@ fastify.post('/scan-repo', async (request, reply) => {
   }
 });
 
-fastify.listen({ port: process.env.PORT || 3000 }, (err) => {
+fastify.listen({ port: process.env.PORT || 3000, host: '0.0.0.0' }, (err) => {
   if (err) throw err;
 });
