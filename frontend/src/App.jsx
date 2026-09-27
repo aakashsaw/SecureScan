@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import './App.css';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 import CodeBlock from './CodeBlock';
 
 function App() {
@@ -36,7 +37,7 @@ function App() {
     setScanned(false);
 
     try {
-      const res = await axios.post('http://localhost:3000/scan-repo', {
+      const res = await axios.post(`${API_URL}/scan-repo`,  {
         owner: parsed.owner,
         repo: parsed.repo,
       });
